@@ -1,6 +1,6 @@
 <?php
 
-namespace Gentor\ActiveCampaign;
+namespace Ghattrell\ActiveCampaign;
 
 
 use ActiveCampaign;
@@ -8,7 +8,7 @@ use ActiveCampaign;
 /**
  * Class ActiveCampaignService
  *
- * @package Gentor\ActiveCampaign
+ * @package Ghattrell\ActiveCampaign
  */
 class ActiveCampaignService
 {

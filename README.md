@@ -1,7 +1,7 @@
 ActiveCampaign
 ===============
 
-Wrapper on the ActiveCampaign PHP API - with custom methods and support for Laravel 5.x
+Wrapper on the ActiveCampaign PHP API - with custom methods and support for Laravel 5.x, and extension of Gentor's good work.
 
 Installation
 ------------
@@ -9,20 +9,20 @@ Installation
 Installation using composer:
 
 ```
-composer require gentor/activecampaign
+composer require ghattrell/activecampaign
 ```
 
 
 Add the service provider in `config/app.php`:
 
 ```php
-Gentor\ActiveCampaign\ActiveCampaignServiceProvider::class,
+Ghattrell\ActiveCampaign\ActiveCampaignServiceProvider::class,
 ```
 
 Add the facade alias in `config/app.php`:
 
 ```php
-'AC' => Gentor\ActiveCampaign\Facades\ActiveCampaign::class,
+'AC' => Ghattrell\ActiveCampaign\Facades\ActiveCampaign::class,
 ```
 
 Configuration

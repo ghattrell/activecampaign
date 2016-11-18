@@ -1,6 +1,6 @@
 <?php
 
-namespace Gentor\ActiveCampaign;
+namespace Ghattrell\ActiveCampaign;
 
 
 use Illuminate\Support\ServiceProvider;
@@ -8,7 +8,7 @@ use Illuminate\Support\ServiceProvider;
 /**
  * Class ActiveCampaignServiceProvider
  *
- * @package Gentor\ActiveCampaign
+ * @package Ghattrell\ActiveCampaign
  */
 class ActiveCampaignServiceProvider extends ServiceProvider
 {

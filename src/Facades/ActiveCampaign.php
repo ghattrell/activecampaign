@@ -1,6 +1,6 @@
 <?php
 
-namespace Gentor\ActiveCampaign\Facades;
+namespace Ghattrell\ActiveCampaign\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
