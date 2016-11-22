@@ -26,7 +26,9 @@ class ActiveCampaignService
      */
     public function __construct(array $config)
     {
-        $this->ac = new ActiveCampaign($config['api_url'], $config['api_key'], $config['event_key'], $config['account_id']);
+        $this->ac = new ActiveCampaign($config['api_url'], $config['api_key']);
+        $this->ac->track_actid = $config['account_id'];
+        $this->ac->track_key   = $config['event_key'];
     }
 
     /**
