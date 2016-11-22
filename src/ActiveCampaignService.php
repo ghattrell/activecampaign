@@ -4,7 +4,6 @@ namespace Ghattrell\ActiveCampaign;
 
 
 use ActiveCampaign;
-use Illuminate\Support\Facades\Config;
 
 /**
  * Class ActiveCampaignService
