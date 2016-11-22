@@ -4,6 +4,7 @@ namespace Ghattrell\ActiveCampaign;
 
 
 use ActiveCampaign;
+use Illuminate\Support\Facades\Config;
 
 /**
  * Class ActiveCampaignService
@@ -12,6 +13,8 @@ use ActiveCampaign;
  */
 class ActiveCampaignService
 {
+    const API_VERSION_TWO = 2;
+
     /**
      * @var \ActiveCampaign
      */
@@ -24,7 +27,7 @@ class ActiveCampaignService
      */
     public function __construct(array $config)
     {
-        $this->ac = new ActiveCampaign($config['api_url'], $config['api_key']);
+        $this->ac = new ActiveCampaign($config['api_url'], $config['api_key'], $config['event_key'], $config['account_id']);
     }
 
     /**
@@ -76,6 +79,32 @@ class ActiveCampaignService
         return (bool)$result->success;
     }
 
+    public function version($versionNumber)
+    {
+        return $this->ac->version($versionNumber);
+    }
+
+    /**
+     * @return string
+     */
+    public function trackEventList()
+    {
+        $this->version(self::API_VERSION_TWO);
+
+        return $this->ac->api('tracking/event/list');
+    }
+
+    /**
+     * @param array $postData
+     * @return string
+     */
+    public function logEvent(array $postData)
+    {
+        $this->ac->track_email = $postData['email'];
+
+        return $this->ac->api('tracking/log', $postData);
+    }
+
     /**
      * @param \stdClass $contact
      * @param array     $new_lists_ids
@@ -115,5 +144,4 @@ class ActiveCampaignService
 
         return $response;
     }
-
 }
