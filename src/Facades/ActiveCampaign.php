@@ -1,6 +1,6 @@
 <?php
 
-namespace Ghattrell\ActiveCampaign\Facades;
+namespace CodeByKyle\ActiveCampaign\Facades;
 
 use Illuminate\Support\Facades\Facade;
 

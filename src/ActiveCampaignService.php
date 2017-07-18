@@ -1,6 +1,6 @@
 <?php
 
-namespace Ghattrell\ActiveCampaign;
+namespace CodeByKyle\ActiveCampaign;
 
 
 use ActiveCampaign;
@@ -8,7 +8,7 @@ use ActiveCampaign;
 /**
  * Class ActiveCampaignService
  *
- * @package Ghattrell\ActiveCampaign
+ * @package CodeByKyle\ActiveCampaign
  */
 class ActiveCampaignService
 {
