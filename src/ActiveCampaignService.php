@@ -32,12 +32,49 @@ class ActiveCampaignService
     }
 
     /**
+     * Get the ActiveCampaign reference
+     * @return ActiveCampaign
+     */
+    public function getActiveCampaign() {
+        return $this->ac;
+    }
+
+    /**
      * @return mixed
      */
     public function accountView()
     {
         return $this->ac->api("account/view");
     }
+
+
+    /**
+     * Create a contact with the specified email. Optional additional data via the data param
+     * see: http://www.activecampaign.com/api/example.php?call=contact_add
+     * @param $email
+     * @param array $data
+     * @return bool
+     */
+    public function createContact($email, array $data=[]) {
+        $result = $this->ac->api("contact/add", array_merge([
+            'email' => $email
+        ], $data));
+
+        return (bool)$result->success;
+    }
+
+
+
+    public function addTagToContact($email, array $tags=[])
+    {
+        $result = $this->ac->api('contact/tag_add', [
+            'email' => $email,
+            'tags' => $tags
+        ]);
+
+        return (bool)$result->success;
+    }
+
 
     /**
      * @param $id
