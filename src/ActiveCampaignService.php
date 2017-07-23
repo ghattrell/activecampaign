@@ -64,10 +64,32 @@ class ActiveCampaignService
     }
 
 
-
+    /**
+     * Add one or multiple tags to a contact
+     * @param $email
+     * @param array $tags
+     * @return bool
+     */
     public function addTagToContact($email, array $tags=[])
     {
         $result = $this->ac->api('contact/tag_add', [
+            'email' => $email,
+            'tags' => $tags
+        ]);
+
+        return (bool)$result->success;
+    }
+
+
+    /**
+     * Remove one or many tags from a contact
+     * @param $email
+     * @param array $tags
+     * @return bool
+     */
+    public function removeTagsFromContact($email, array $tags=[])
+    {
+        $result = $this->ac->api('contact/tag_remove', [
             'email' => $email,
             'tags' => $tags
         ]);
