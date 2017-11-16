@@ -49,31 +49,55 @@ class ActiveCampaignService
 
 
     /**
-     * Create a contact with the specified email. Optional additional data via the data param
+     * Get a list of contacts from Active Campaign. Optional filters array.
+     * @see: https://www.activecampaign.com/api/example.php?call=contact_list
+     * @param array $filters
+     * @return array $data
+     */
+    public function listContacts(array $filters=[]) {
+
+    }
+
+
+    /**
+     * Create a contact with the specified email. If a contact already exists with that ID,
+     * return the existing user instead
+     * Optional additional data via the data param
      * see: http://www.activecampaign.com/api/example.php?call=contact_add
      * @param $email
      * @param array $data
-     * @return bool
+     * @return int "The ID of the created or discovered contact"
      */
     public function createContact($email, array $data=[]) {
         $result = $this->ac->api("contact/add", array_merge([
             'email' => $email
         ], $data));
 
-        return (bool)$result->success;
+        if ((bool)$result->success) {
+            if (property_exists($result, 'subscriber_id')) {
+                return $result->subscriber_id;
+            }
+        } else {
+            // The user already exists, return that ID instead
+            if ($result->result_code == 0 && property_exists($result, "0")) {
+                return (int)$result->{'0'}->id;
+            }
+        }
+
+        return null;
     }
 
 
     /**
      * Add one or multiple tags to a contact
-     * @param $email
+     * @param id
      * @param array $tags
      * @return bool
      */
-    public function addTagToContact($email, array $tags=[])
+    public function addTagToContact($id, array $tags=[])
     {
         $result = $this->ac->api('contact/tag_add', [
-            'email' => $email,
+            'email' => $id,
             'tags' => $tags
         ]);
 
@@ -83,14 +107,14 @@ class ActiveCampaignService
 
     /**
      * Remove one or many tags from a contact
-     * @param $email
+     * @param $id
      * @param array $tags
      * @return bool
      */
-    public function removeTagsFromContact($email, array $tags=[])
+    public function removeTagsFromContact($id, array $tags=[])
     {
         $result = $this->ac->api('contact/tag_remove', [
-            'email' => $email,
+            'id' => $id,
             'tags' => $tags
         ]);
 
