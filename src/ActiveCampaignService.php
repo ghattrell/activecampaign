@@ -66,14 +66,14 @@ class ActiveCampaignService
 
     /**
      * Add one or multiple tags to a contact
-     * @param $email
+     * @param $id
      * @param array $tags
      * @return bool
      */
-    public function addTagToContact($email, array $tags=[])
+    public function addTagToContact($id, array $tags=[])
     {
         $result = $this->ac->api('contact/tag_add', [
-            'email' => $email,
+            'id' => $id,
             'tags' => $tags
         ]);
 
@@ -83,18 +83,27 @@ class ActiveCampaignService
 
     /**
      * Remove one or many tags from a contact
-     * @param $email
+     * @param $id
      * @param array $tags
      * @return bool
      */
-    public function removeTagsFromContact($email, array $tags=[])
+    public function removeTagsFromContact($id, array $tags=[])
     {
         $result = $this->ac->api('contact/tag_remove', [
-            'email' => $email,
+            'id' => $id,
             'tags' => $tags
         ]);
 
         return (bool)$result->success;
+    }
+
+
+    public function contactList($ids='ALL') {
+        $result = $this->ac->api('contact/list', [
+            'ids' => $ids
+        ]);
+
+        return $result;
     }
 
 
