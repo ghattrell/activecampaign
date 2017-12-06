@@ -18,6 +18,7 @@ return array(
     'AC_Group' => $vendorDir . '/activecampaign/api-php/includes/Group.class.php',
     'AC_List_' => $vendorDir . '/activecampaign/api-php/includes/List.class.php',
     'AC_Message' => $vendorDir . '/activecampaign/api-php/includes/Message.class.php',
+    'AC_Organization' => $vendorDir . '/activecampaign/api-php/includes/Organization.class.php',
     'AC_Segment' => $vendorDir . '/activecampaign/api-php/includes/Segment.class.php',
     'AC_Settings' => $vendorDir . '/activecampaign/api-php/includes/Settings.class.php',
     'AC_Subscriber' => $vendorDir . '/activecampaign/api-php/includes/Subscriber.class.php',

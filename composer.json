@@ -15,7 +15,8 @@
     ],
     "require": {
         "php": ">= 5.6",
-        "activecampaign/api-php": "~2.0"
+        "activecampaign/api-php": "~2.0",
+        "guzzlehttp/guzzle": "^6.3"
     },
     "autoload": {
         "psr-4": {

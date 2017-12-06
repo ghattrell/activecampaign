@@ -109,7 +109,6 @@ class ActiveCampaign extends AC_Connector {
 		$response = $class->$method($params, $post_data);
 		return $response;
 	}
-
 }
 
 require_once("Account.class.php");
@@ -123,6 +122,7 @@ require_once("Form.class.php");
 require_once("Group.class.php");
 require_once("List.class.php");
 require_once("Message.class.php");
+require_once("Organization.class.php");
 require_once("Segment.class.php");
 require_once("Settings.class.php");
 require_once("Subscriber.class.php");
