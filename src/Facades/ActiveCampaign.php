@@ -1,11 +1,11 @@
 <?php
 
-namespace Ghattrell\ActiveCampaign\Facades;
+namespace CodeByKyle\ActiveCampaign\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @see \Gentor\ActiveCampaign\ActiveCampaignService
+ * @see \CodeByKyle\ActiveCampaign\ActiveCampaignService
  */
 class ActiveCampaign extends Facade
 {

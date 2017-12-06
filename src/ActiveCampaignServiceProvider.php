@@ -1,6 +1,6 @@
 <?php
 
-namespace Ghattrell\ActiveCampaign;
+namespace CodeByKyle\ActiveCampaign;
 
 
 use Illuminate\Support\ServiceProvider;
@@ -8,7 +8,7 @@ use Illuminate\Support\ServiceProvider;
 /**
  * Class ActiveCampaignServiceProvider
  *
- * @package Ghattrell\ActiveCampaign
+ * @package CodeByKyle\ActiveCampaign
  */
 class ActiveCampaignServiceProvider extends ServiceProvider
 {

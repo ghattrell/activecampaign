@@ -9,7 +9,7 @@ class ComposerStaticInitfd29f3e2098568b43907691c15458fc2
     public static $prefixLengthsPsr4 = array (
         'G' => 
         array (
-            'Ghattrell\\ActiveCampaign\\' => 25,
+            'CodeByKyle\\ActiveCampaign\\' => 25,
         ),
     );
 

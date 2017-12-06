@@ -1,5 +1,5 @@
 {
-    "name": "ghattrell/activecampaign",
+    "name": "codebykyle/activecampaign",
     "description": "Wrapper on the ActiveCampaign PHP API - with custom methods and support for Laravel 5.x. Continuing on the work from Gentor.",
     "keywords": [
         "laravel",
@@ -9,17 +9,18 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "George Hattrell",
-            "email": "ghattrell@gmail.com"
+            "name": "Kyle Shovan",
+            "email": "kyle@codebykyle.com"
         }
     ],
     "require": {
         "php": ">= 5.6",
-        "activecampaign/api-php": "~2.0"
+        "activecampaign/api-php": "~2.0",
+        "guzzlehttp/guzzle": "^6.3"
     },
     "autoload": {
         "psr-4": {
-            "Ghattrell\\ActiveCampaign\\": "src/"
+            "CodeByKyle\\ActiveCampaign\\": "src/"
         }
     },
     "minimum-stability": "dev"
